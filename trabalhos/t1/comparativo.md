@@ -24,3 +24,5 @@ Nome: Ana Luisa V. Solórzano
 - Sistema FIEB. Mais rápido supercomputador da AL fica no SENAI Cimatec. http://www.fieb.org.br/Noticia/2866/Mais-rapido-supercomputador-da-AL-fica-no-SENAI-Cimatec.aspx.
 - Intel. Intel® Xeon® Processor E5-2690 v2 - 25M Cache, 3.00 GHz. https://ark.intel.com/pt-br/products/75279/Intel-Xeon-Processor-E5-2690-v2-25M-Cache-3_00-GHz.
 - TOP500. CIMATEC Yemoja - SGI ICE X, Intel Xeon E5-2690v2 10C 3GHz, Infiniband FDR. https://www.top500.org/system/178420.
+- netlib. HPL Tuning. http://www.netlib.org/benchmark/hpl/tuning.html.
+- HPL obtido em: http://www.netlib.org/benchmark/hpl/ 
