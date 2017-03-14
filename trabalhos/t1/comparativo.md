@@ -16,7 +16,7 @@ Nome: Ana Luisa V. Solórzano
 | Frequência do(s) processador(es)                          |     3GHz - 3,6GHz     | 2,2GHz - 2,7GHz |
 | Memória total                                             |          132TB        |       4GB       |
 | Tipo(s) de interconexão entre os núcleos/processadores    |    Infiniband FDR     |        -        |
-| Desempenho Linpack                                        |    405,365 TFlop/s    |                 |
+| Desempenho Linpack                                        |    405,365 TFlop/s    |Size:1000 - 107,775GFlops/s|
 
 ### Referências
 - Intel. Intel® Core™ i5-5200U Processor - 3M Cache, up to 2.70 GHz. https://ark.intel.com/pt-br/products/85212/Intel-Core-i5-5200U-Processor-3M-Cache-up-to-2_70-GHz.
