@@ -27,7 +27,7 @@ Nome: Ana Luisa V. Solórzano
    ### Screenshots:
       ![swap](dotprod_seq/screenshots/swap.png?raw=true "Execução com vetor de tamanho 300M fazendo swap.")
       
-      ![30M](dotprod_seq/screenshots/30M.png?raw=true "Execução do programa com vetor de tamanho 30M, o qual faz bom uso da CPU sem precisar de swap.")
+      ![30M](dotprod_seq/screenshots/30M.png?raw=true "Execução do programa com vetor de tamanho 30M e alternando o nº de repetições, o qual faz bom uso da CPU sem precisar de swap.")
       
       ![30Mgprof](dotprod_seq/screenshots/30M1exec.png?raw=true "Execução com vetor de tamanho 30M e 1 repetição.")
    ### Observações:
