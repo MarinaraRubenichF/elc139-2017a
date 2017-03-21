@@ -25,9 +25,11 @@ Nome: Ana Luisa V. Solórzano
       Sim. Quanto maior o tamanho do vetor maior será o tempo gasto na função de inicialização dos vetores, e quanto mais repetições de execução do produto escalar maior o tempo gasto na função de cálculo. Assim, nos vetores de tamanho grande (30 e 60 milhões) ao executar 1 repetição a maioria do tempo foi utilizado nas suas inicializações, sendo que a proporção entre o tempo gasto na chamada de 'init_vectors' e o tempo gasto na chamada de 'dot_product' gira em torno de 1,5 a 2.\
    (b) Pelo perfil de execução, há alguma função que poderia ser candidata a paralelização? Por quê?
    ### Screenshots:
-      ![Execução com vetor de tamanho 300M fazendo swap.]()\
-      ![Execução do programa com vetor de tamanho 30M, o qual faz bom uso da CPU sem precisar de swap.]()\
-      ![Execução com vetor de tamanho 30M e 1 repetição.]()
+      ![swap](dotprod_seq/screenshots/swap.png?raw=true "Execução com vetor de tamanho 300M fazendo swap.")
+      
+      ![30M](dotprod_seq/screenshots/30M.png?raw=true "Execução do programa com vetor de tamanho 30M, o qual faz bom uso da CPU sem precisar de swap.")
+      
+      ![30Mgprof](dotprod_seq/screenshots/30M1exec.png?raw=true "Execução com vetor de tamanho 30M e 1 repetição.")
    ### Observações:
 
 ----
