@@ -48,17 +48,17 @@ Nome: Ana Luisa V. Solórzano
 
 ## Parte 2
    ### Anotações:
-   O programa escolhido foi o de multiplicação de cadeia de matrizes (matrix chain multiplication) em C, no qual o programa recebe o número de matrizes e calcula qual o jeito mais eficiente de multiplicar essas matrizes, utilizando um algoritmo de programação dinâmica e um algoritmo sem programação dinâmica. Foram utilizados os profilers Intel® VTune™ Amplifier e Gprof.
+   O programa escolhido foi o de multiplicação de cadeia de matrizes (matrix chain multiplication) em C, no qual o programa recebe o tamanho do vetor de dimensões de matrizes e calcula qual o jeito mais eficiente de multiplicar essas matrizes, utilizando um algoritmo de programação dinâmica e um algoritmo sem programação dinâmica. Foram utilizados os profilers Intel® VTune™ Amplifier e Gprof.
   *Tentei utilizar o KProf, mas precisaria instalar KDE; o Very Sleepy só roda em Windows e o link oficial do Zoom estava quebrado. 
+  
    ### Respostas:
-   Observou-se que a partir de 6 matrizes a função de cálculo utilizando programação dinâmica passa a sempre levar menos tempo do que o cálculo normal.
-
+   Observou-se que a partir da entrada 6 a função de cálculo utilizando programação dinâmica passa a sempre levar menos tempo do que o cálculo normal. No Vtune pode-se observar que o programa fez um bom uso da CPU, levando em consideração que não é um programa multithread. 
    ### Screenshots:
-   ![vtune1](mult_cadeia_mat/screenshots/input25.png?raw=true "vtune1")
+   Análises no VTune quanto ao uso de CPU para um vetor de 25 dimensões de matrizes:
+   
+   ![vtune1](mult_cadeia_mat/screenshots/input25.png?raw=true "vtune1")
    
    ![vtune2](mult_cadeia_mat/screenshots/input25_2.png?raw=true "vtune2")
-   
-   Resultados obtido no Vtune com a execução de uma cadeia de matrizes de 25 matrizes.
    
    ### Observações:
    O tempo de execução observado no VTune foi o mesmo que o obtido no cálculo do programa.
