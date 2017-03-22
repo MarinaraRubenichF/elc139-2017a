@@ -48,6 +48,7 @@ Nome: Ana Luisa V. Solórzano
 
 ## Parte 2
    ### Anotações:
+   O programa escolhido foi o de multiplicação de cadeia de matrizes (matrix chain multiplication) em C, no qual o programa recebe o número de matrizes e calcula qual o jeito mais eficiente de multiplicar essas matrizes, utilizando um algoritmo de programação dinâmica e um algoritmo sem programação dinâmica. Foram utilizados os profilers Intel® VTune™ Amplifier e Gprof com a ferramenta de visualização KProf.
    ### Respostas:
    ### Screenshots:
    ### Observações:
@@ -57,3 +58,6 @@ Nome: Ana Luisa V. Solórzano
 ## Referências
 - The Geek Stuff. GPROF Tutorial – How to use Linux GNU GCC Profiling Tool. http://www.thegeekstuff.com/2012/08/gprof-tutorial/.
 - GNU gprof. Interpreting gprof's Output. https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html_chapter/gprof_5.html.
+- Geeks for Geeks. Dynamic Programming | Set 8 (Matrix Chain Multiplication). http://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/.
+- Intel Developer Zone. Interpret Result Data. https://software.intel.com/en-us/node/487655.
+- KProf. http://kprof.sourceforge.net/.
