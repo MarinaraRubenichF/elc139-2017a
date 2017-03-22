@@ -1,0 +1,15 @@
+-r
+/home/ana/Documentos/2017-1/Programação Paralela/github/elc139-2017a/trabalhos/t2/mult_cadeia_mat/t2_matrix/r003hs
+--stack-stitching
+--data-limit-mb=500
+--disk-space-limit=100
+--mrte-type=java,python
+--itt-config=frame
+--stackwalk=offline
+--mrte-mode=auto
+--type=cpu:counters:nostack
+--type=cpu:stack
+--interval=10
+--
+/home/ana/Documentos/2017-1/Programação Paralela/github/elc139-2017a/trabalhos/t2/mult_cadeia_mat/matrix
+10
