@@ -66,7 +66,7 @@ Nome: Ana Luisa V. Solórzano
    
    ![vtune2](mult_cadeia_mat/screenshots/input25_2.png?raw=true "vtune - input 25")
    
-   Análises no gprof e com $htop quanto ao uso de CPU para um vetor de 25 dimensões de matrizes:
+   Análises no gprof e com htop quanto ao uso de CPU para um vetor de 25 dimensões de matrizes:
    
    ![gprof](mult_cadeia_mat/screenshots/input25gprof.png?raw=true "gprof - input 25")
    
