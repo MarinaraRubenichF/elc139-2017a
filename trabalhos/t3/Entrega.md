@@ -60,14 +60,37 @@ Nome: Ana Luisa V. Solórzano
    }
    ```
    
-2. Considerando o tempo (em segundos) mostrado na saída do programa, qual foi a aceleração com o uso de threads?\\
+2. Considerando o tempo (em segundos) mostrado na saída do programa, qual foi a aceleração com o uso de threads?
 
-3. A aceleração (speedup) se sustenta para outros tamanhos de vetores, números de threads e repetições? 
-Para responder a essa questão, você terá que realizar diversas execuções, variando o tamanho do problema 
-(tamanho dos vetores e número de repetições) e o número de threads (1, 2, 4, 8..., dependendo do número de núcleos). 
-Cada caso deve ser executado várias vezes, para depois calcular-se um tempo de processamento médio para cada caso. 
-Atenção aos fatores que podem interferir na confiabilidade da medição: uso compartilhado do computador, 
-tempos muito pequenos, etc.
+  A aceleração foi de aproximadamente 1.82 (foram feitas 10 execuções de cada caso e pegos os menores tempos).
+
+3. A aceleração (speedup) se sustenta para outros tamanhos de vetores, números de threads e repetições? Para responder a essa questão, você terá que realizar diversas execuções, variando o tamanho do problema (tamanho dos vetores e número de repetições) e o número de threads (1, 2, 4, 8..., dependendo do número de núcleos). Cada caso deve ser executado várias vezes, para depois calcular-se um tempo de processamento médio para cada caso. Atenção aos fatores que podem interferir na confiabilidade da medição: uso compartilhado do computador, tempos muito pequenos, etc.
+
+Tabelas com os tempos de execução (usec) para cada caso testado:
+
+Tamanho de vetor: 1000000
+
+Repetições |1 thread | 2threads | 4threads |
+---------- | ------- | -------- | -------- |
+1000  | | | |
+2000  | | | |
+3000  | | | |
+
+Tamanho de vetor: 10000000
+
+Repetições |1 thread | 2threads | 4threads |
+---------- | ------- | -------- | -------- |
+1000  | | | |
+2000  | | | |
+3000  | | | |
+
+Tamanho de vetor: 20000000
+
+Repetições |1 thread | 2threads | 4threads |
+---------- | ------- | -------- | -------- |
+1000  | | | |
+2000  | | | |
+3000  | | | |
 
 4. Elabore um gráfico/tabela de aceleração a partir dos dados obtidos no exercício anterior.
 
