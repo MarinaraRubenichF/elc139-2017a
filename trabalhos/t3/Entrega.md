@@ -66,7 +66,7 @@ Nome: Ana Luisa V. Solórzano
 
 3. A aceleração (speedup) se sustenta para outros tamanhos de vetores, números de threads e repetições? Para responder a essa questão, você terá que realizar diversas execuções, variando o tamanho do problema (tamanho dos vetores e número de repetições) e o número de threads (1, 2, 4, 8..., dependendo do número de núcleos). Cada caso deve ser executado várias vezes, para depois calcular-se um tempo de processamento médio para cada caso. Atenção aos fatores que podem interferir na confiabilidade da medição: uso compartilhado do computador, tempos muito pequenos, etc.
 
-Tabelas com os tempos de execução (usec) para cada caso testado:
+Tabelas com os tempos de execução (usec) para cada caso testado (10 rodadas cada):
 
 Tamanho de vetor: 1000000
 
@@ -88,11 +88,34 @@ Tamanho de vetor: 20000000
 
 Repetições |1 thread | 2threads | 4threads |
 ---------- | ------- | -------- | -------- |
-1000  | | | |
-2000  | | | |
-3000  | | | |
+1000  | 69502162 | 38045032 | 32393138 |
+2000  | 139019381 | 77096666 | 71441022 |
+3000  | 208542112 | 115446728 | 107186503 |
 
 4. Elabore um gráfico/tabela de aceleração a partir dos dados obtidos no exercício anterior.
+
+Speedups para vetores de tamanho 1000000 em cada caso (nº de threads X nº repetições):
+
+Threads | 1000 | 2000 | 3000 |
+------- | --- | ---- |----- |
+2  | |  |  |
+4  | |  |  |
+
+Speedups para vetores de tamanho 10000000 em cada caso (nº de threads X nº repetições):
+
+Threads | 1000 | 2000 | 3000 |
+------- | --- | ---- |----- |
+2  | |  |  |
+4  | |  |  |
+
+Speedups para vetores de tamanho 2000000 em cada caso (nº de threads X nº repetições):
+
+Threads | 1000 | 2000 | 3000 |
+------- | --- | ---- |----- |
+2  | |  |  |
+4  | |  |  |
+
+
 
 5 .Explique as diferenças entre pthreads_dotprod.c e pthreads_dotprod2.c. Com as linhas removidas, o programa está correto?
 
