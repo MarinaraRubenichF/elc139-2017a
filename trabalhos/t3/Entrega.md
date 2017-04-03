@@ -118,6 +118,7 @@ Threads | 1000 | 2000 | 3000 |
 
 
 5. Explique as diferenças entre pthreads_dotprod.c e pthreads_dotprod2.c. Com as linhas removidas, o programa está correto?
+  
   O pthreads_dotprod2.c não realiza exclusão mútua na função *'dotprod_worker'* durante o acesso a variável que receberá a soma total (l. 46). Ele não está correto, pois esse fato pode acarretar em inconsistencia no resultado, pois pode ocorrer de duas threads quererem incrementar a mesma variável ao mesmo tempo, mesmo assim algumas vezes o programa pode gerar saídas consistentes.
   
 ## Implementação OpenMP 
