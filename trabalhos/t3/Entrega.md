@@ -124,6 +124,8 @@ Threads | 1000 | 2000 | 3000 |
 
 1. Implemente um programa equivalente a pthreads_dotprod.c usando OpenMP.
 
+   [omp_dotprod.c](openmp/omp_dotprod.c)
+
 2. Avalie o desempenho do programa em OpenMP, usando os mesmos dados/argumentos do programa com threads POSIX.
 
 Tabelas com os tempos de execução (usec) para cada caso testado (10 rodadas cada):
@@ -140,38 +142,38 @@ Tamanho de vetor: 10000000
 
 Repetições | 1 thread | 2threads | 4threads |
 ---------- | ------- | -------- | -------- |
-1000  | | | |
-2000  | | | |
-3000  | | | |
+1000  | 34611254 | 18858290 | 17050259 |
+2000  | 69272620 | 37730935 | 38829743 |
+3000  | 103729471 | 56618425 | 60512053 |
 
 Tamanho de vetor: 20000000
 
 Repetições | 1 thread | 2threads | 4threads |
 ---------- | ------- | -------- | -------- |
-1000  | | | |
-2000  | | | |
-3000  | | | |
+1000  | 88907112 | 37833336 | 34032849 |
+2000  | 138408177 | 75628247 | 68151576 |
+3000  | 207797130 | 113482489 | 102232832 |
 
 Speedups para vetores de tamanho 1000000 em cada caso (nº de threads pelo nº repetições):
 
 Threads | 1000 | 2000 | 3000 |
 ------- | ---- | ---- |----- |
-2  |   |   |   |
-4  |  |   |   |
+2  | 1.821 | 1.820 | 1.822 |
+4  | 2.026 | 2.014 | 1.895 |
 
 Speedups para vetores de tamanho 10000000 em cada caso (nº de threads pelo nº repetições):
 
 Threads | 1000 | 2000 | 3000 |
 ------- | --- | ---- |----- |
-2  |   |   |   |
-4  |  |   |   |
+2  | 1.835 | 1.835 | 1.832 |
+4  | 2.029 | 1.784 | 1.714 |
 
 Speedups para vetores de tamanho 2000000 em cada caso (nº de threads pelo nº repetições):
 
 Threads | 1000 | 2000 | 3000 |
-------- | --- | ---- |----- |
-2  |  |   |   |
-4  |  |  |   |
+------- | --- | ---- |---- |
+2  | 2.349 | 1.830 | 1.831 |
+4  | 2.612 | 2.030 | 2.032 |
   
 ## Referências: 
 - Ricardo Rocha DCC-FCUP. Programação Paralela e Distribuída. https://www.dcc.fc.up.pt/~ricroc/aulas/0708/ppd/apontamentos/fundamentos.pdf.
