@@ -7,10 +7,11 @@ Sala: 363, CT
 
 
 ## Trabalhos
- - [TOP500 & me: comparativo de arquiteturas paralelas](trabalhos/t1) (entrega até terça, 14/03/2017, 9h)
- - [Experiências com profilers](trabalhos/t2) (entrega até quarta, 22/03/2017, 23h59)
- - [Programação paralela multithread](trabalhos/t3) (entrega até segunda, 03/04/2016, 23h59)
- - [Bug em OpenMP](trabalhos/t4) (entrega até segunda, 10/04/2016, 23h59)
+ - [TOP500 & me: comparativo de arquiteturas paralelas](trabalhos/t1) (entrega até terça, 14/03, 9h)
+ - [Experiências com profilers](trabalhos/t2) (entrega até quarta, 22/03, 23h59)
+ - [Programação paralela multithread](trabalhos/t3) (entrega até segunda, 03/04, 23h59)
+ - [Bug em OpenMP](trabalhos/t4) (entrega até segunda, 10/04, 23h59)
+ - [Aplicação do método de Monte Carlo em OpenMP](trabalhos/t5) (entrega até quarta, 19/04, 23h59 - apresentação quinta, 20/04)
 <!--
  - [Experiências com profilers] (trabalhos/t2) (entrega até quarta, 23/03/2016, 23h59)
  - [Programação paralela multithread] (trabalhos/t3) (entrega até segunda, 04/04/2016, 23h59)
