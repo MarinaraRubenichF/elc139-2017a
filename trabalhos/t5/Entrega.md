@@ -6,10 +6,10 @@ Nomes: Ana Veroneze e Gabriel Cardoso
 
 ## Códigos:
 
-[omp-versão 1](/firesim-omp-1)\
-[omp-versão 2](/firesim-omp-2)
+[omp-versão 1](firesim-omp-1/)\
+[omp-versão 2](firesim-omp-2/)
 
-## [Slides](/T5-PP.pdf)
+## [Slides](T5-PP.pdf)
 
 ## Referências:
 * Lawrence Livermore National Laboratory (LLNL). OpenMP. https://computing.llnl.gov/tutorials/openMP/.
