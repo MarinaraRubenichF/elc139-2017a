@@ -24,3 +24,6 @@ Nome: Ana Luisa V. Solórzano
    Comunicação:\
    Aglomeração:\
    Mapeamento: 
+   
+   ### Análises de desempenho:
+   Execuções:
