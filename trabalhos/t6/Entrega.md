@@ -90,14 +90,17 @@ Nome: Ana Luisa V. Solórzano
    ## Parte 2
    
    + Implemente um programa MPI que transporte uma mensagem em um pipeline formado por processos de 0 a NP-1 (processo 0 envia para 1, processo 1 envia para 2, ..., processo NP-1 mostra o resultado). A mensagem é um número inteiro que é incrementado antes de ser passado adiante.
-
+   [my_mpi.c](my_mpi.c)
+   
 + O programa [mpi_errado1.c](mpi_errado1.c) deveria realizar a troca de mensagens entre 2 processos, mas ele não funciona como esperado. Identifique o erro e corrija-o.\
    Neste programa, o erro está em setar o valor do argumento *tag* como 0 na função *MPI_Recv* para o rank 0 e como 1 no MPI_Recv para o rank 1 , pois com isso cada processo esperará uma mensagem com um ID determinado e as outras mensagens vindas de outro ID não serão recebidas. Nesse caso, o processo 0 fica esperando infinitamente uma mensagem com rank 0 e o processo 1 fica esperando uma mensagem com rank 1, ou seja, não há troca de mensagens. Uma solução seria usar *MPI_ANY_TAG* em ambos os casos para definir o valor da tag, assim, cada processo receberia mensagens vindas de qualquer outro processo.\
    [mpi_corrigido1.c](mpi_corrigido1.c)
 
 
-+ O programa [mpi_errado2.c](mpi_errado2.c) deveria realizar a troca de mensagens entre 2 processos, mas também não funciona como esperado. Identifique o erro e corrija-o.
-
++ O programa [mpi_errado2.c](mpi_errado2.c) deveria realizar a troca de mensagens entre 2 processos, mas também não funciona como esperado. Identifique o erro e corrija-o.\
+  Neste programa faltou utilizar o MPI_Finalize() depois de terminar todas as rotinas utilizando MPI. Para terminar corretamente o ambiente de execução com MPI usa-se MPI_Finalize() no final do programa.\
+  [mpi_corrigido2.c](mpi_corrigido2.c)
+  
  ## Referências
  * Intel. Intel® Xeon® Processor E5620. http://ark.intel.com/PT-BR/products/47925/Intel-Xeon-Processor-E5620-12M-Cache-2_40-GHz-5_86-GTs-Intel-QPI.
  * Open-mpi. Running MPI jobs. https://www.open-mpi.org/faq/?category=running.
