@@ -8,13 +8,7 @@ Nome: Ana Luisa V. Solórzano
   * [Parte 1](#parte-1)
     * Análise do programa
     * Análises de desempenho 
-    * Screenshots
-    * Observações
   * [Parte 2](#parte-2)
-    * Anotações
-    * Respostas
-    * Screenshots
-    * Observações
   * [Referências](#referências)
   
   ----
@@ -78,7 +72,7 @@ Nome: Ana Luisa V. Solórzano
    
    ### Análises de desempenho:
    Especificações da máquina utilizada **lsc4** :\
-   Compilador gcc 4.9.2 e Sistema Operacional Debian versão do Linux 4.9.2-10)\
+   Compilador gcc 4.9.2 e Sistema Operacional Debian versão do Linux 4.9.2-10\
    Processador Intel(R) Xeon(R) E5620, com 4 cores físicos e 8 virtuais, memória cache L1 de 32KB, L2 de 256KB e L3 de 12MB e 12GB de RAM.
    
    | Caso | Tamanho do vetor | Repetições | Num. de Processos | Host | Tempo de Execução (sec) | Speedup |
