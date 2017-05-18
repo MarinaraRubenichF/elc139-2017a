@@ -6,7 +6,7 @@ Nome: Ana Luisa V. Solórzano
 ---
 
 [Programa desenvolvido](DijkstraMPI.c)\
-[Apresentação](T7-PP.pdf)
+[Apresentação](https://docs.google.com/presentation/d/1qVSdNlNOzOrKmiyxKTxOacIWD-pfScaVb-xMRBK_-eQ/pub?start=false&loop=false&delayms=3000)
  
 ## Referências:
 * https://computing.llnl.gov/LCdocs/mpi/mpi.pdf
