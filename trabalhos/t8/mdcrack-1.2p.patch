@@ -1,0 +1,42 @@
+diff -u -r -N mdcrack-1.2/Makefile mdcrack-1.2p/Makefile
+--- mdcrack-1.2/Makefile	2001-08-15 19:47:34.000000000 -0300
++++ mdcrack-1.2p/Makefile	2007-06-10 15:53:09.000000000 -0300
+@@ -52,11 +52,11 @@
+ 
+ 
+ # Ncurses, uncomment these 2 lines if you wish colors in your life.
+-NCURSES=
+-NCURSES=-DNCURSES 
++#NCURSES=
++#NCURSES=-DNCURSES 
+ 
+ #LDFLAGS=
+-LDFLAGS=-lncurses
++#LDFLAGS=-lncurses
+ 
+ # Debugging 
+ DEBUG=
+diff -u -r -N mdcrack-1.2/src/MD4/core3.c mdcrack-1.2p/src/MD4/core3.c
+--- mdcrack-1.2/src/MD4/core3.c	2001-08-14 23:02:01.000000000 -0300
++++ mdcrack-1.2p/src/MD4/core3.c	2007-06-10 15:29:02.000000000 -0300
+@@ -1575,7 +1575,7 @@
+ 
+ 		  ascii2bin(test, conv, hash);
+ 		  Decode(result2, hash, 16);
+-		  (unsigned int)bufferr2+=len+35;
++		  bufferr2+=len+35;
+ 		}
+ 	      else
+ 
+diff -u -r -N mdcrack-1.2/src/MD5/core3.c mdcrack-1.2p/src/MD5/core3.c
+--- mdcrack-1.2/src/MD5/core3.c	2001-08-14 22:59:05.000000000 -0300
++++ mdcrack-1.2p/src/MD5/core3.c	2007-06-10 15:41:49.000000000 -0300
+@@ -1537,7 +1537,7 @@
+ 
+ 		  ascii2bin(test, conv, hash);
+ 		  Decode(result2, hash, 16);
+-		  (unsigned int)bufferr2+=len+35;
++		  bufferr2+=len+35;
+ 		}
+ 	      else
+ 
