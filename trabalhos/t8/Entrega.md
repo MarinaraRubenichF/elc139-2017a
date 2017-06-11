@@ -8,7 +8,7 @@ Nome: Ana Luisa V. Solórzano
 
   * [Códigos](#codigos)
     * [MDCrack sequencial](mdcrack_sequencial.c)
-    * Troca de Mensagens
+    * [Troca de Mensagens](msg_mpi.c)
     * MDCrack com MPI
   * [Estratégias utilizadas](#estrategias)
   * [Análises de desempenho](#desempenho)
