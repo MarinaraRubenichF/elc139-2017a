@@ -35,28 +35,28 @@ Execuções testadas sem os printf.
 
    * [MDCrack sequencial:](mdcrack_sequencial.c)
    
-   Tempo de Execução - crackme.txt: 1475,575sec \
-   Tempo de Execução - exemplos.txt:
+   Tempo de Execução - crackme.txt: 1474,869sec\
+   Tempo de Execução - exemplos.txt: 40,350sec
    
    * [MDCrack com MPI versão 1:](mdcrack_mpi.c)
    
    | np | Tempo de Execução(sec) - crackme.txt| Speedup | Tempo de Execução(sec) - exemplos.txt| Speedup |
    | -- | ----------------------------------- | ------- | ------------------------------------ | ------- |
-   | 2    | 1589,067 | | 43,476 | - |
-   | 3    | 986,366 | | 43,465 |   |
-   | 4    | 887,196 | | 45,567 |   |
-   | 5    | 964,384 | | 47,191 |   |
-   | 10   | 1451,442129 | | 92,859 |   |
+   | 2  | 1589.067 | - | 43.476 | - |
+   | 3  | 986.366 | 1.611 | 43.465 | 1 |
+   | 4  | 887.196 | 1.791 | 45.567 | 0.954 |
+   | 5  | 964.384 | 1.648 | 47.191 | 0.921 |
+   | 10 | 1451.442129 | 1.095 | 92.859 | 0.468 |
   
    * [MDCrack com MPI versão 2:](mdcrack_mpi2.c)
    
    | np | Tempo de Execução(sec) - crackme.txt| Speedup | Tempo de Execução(sec) - exemplos.txt| Speedup |
    | -- | ----------------------------------- | ------- | ------------------------------------ | ------- |
-   | 2    | 1589,444 | | 43,487 | - |
-   | 3    | 986,070 | | 43,462 |   |
-   | 4    | 886,849 | | 45,120 |   |
-   | 5    | 962,299 | | 47,472 |   |
-   | 10   | 1432,750 | | 92,650 |   |
+   | 2  | 1589.444 | - | 43.487 | - |
+   | 3  | 986.070 | 1.612 | 43.462 | 1 |
+   | 4  | 886.849 | 1.792 | 45.120 | 0.964 |
+   | 5  | 962.299 | 1.651 | 47.472 | 0.916 |
+   | 10 | 1432.750 | 1.109 | 92.650 | 0.469 |
 
 ### Referências: 
  * http://mpitutorial.com/tutorials/dynamic-receiving-with-mpi-probe-and-mpi-status/
