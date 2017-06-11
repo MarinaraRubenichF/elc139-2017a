@@ -7,10 +7,9 @@
 
 #define TRUE 1
 #define INPUT "./mdcrack-1.2/bin/mdcrack -s abcdefghijklmnopqrstuvwxyz -M MD5 "
-#define SIZE 10
 #define MAX_PASS_SIZE 20
 
-/* Facilitador de leitura dos outputs */
+/* Facilitador de leitura dos outputs*/
 #define RED     "\x1b[31m"
 #define GREEN   "\x1b[32m"
 #define YELLOW  "\x1b[33m"
@@ -37,82 +36,60 @@ void send_msg(int dest, int tag, char* cripto)
 
 void master(char* file)
 {
-	int num_proc, num_line, num_msg, i, end;
-	int vsize = SIZE;
+	int num_proc, num_msg, count;
 	char msgrec[MAX_PASS_SIZE];
-
 	size_t tam = 0;
 	size_t str;
 	char *line = NULL;
-	char **cripto = malloc(vsize * sizeof(char*));
+	char **cracked = malloc(100*sizeof(char *));
+	
+	MPI_Status status;
+	MPI_Comm_size(MPI_COMM_WORLD, &num_proc);
 
-	/* Lê o arquivo com os hashes e os salva em um vetor */
 	FILE* f = fopen(file, "r");
 	if(f == NULL){
 		perror("Error: ");
 		exit(0);
 	}
 
-	num_line = 0;
-	while((str = getline(&line, &tam, f)) != -1){
-
-		cripto[num_line] = malloc(str*sizeof(char));
-		strcpy(cripto[num_line], line);
-		num_line++;
-
-		if(num_line == vsize){
-			vsize += SIZE;
-			cripto = realloc(cripto, (vsize)*sizeof(char*));
-		}
-	}
-	cripto[num_line] = '\0';
-	fclose(f);
-
-	char **cracked = malloc(num_line*sizeof(char *));
-
-	/* Início da troca de mensagens */
-
-	MPI_Status status;
-	MPI_Comm_size(MPI_COMM_WORLD, &num_proc);
-	
-	/* Envia uma mensagem para cada processo */
 	num_msg = 0;
-	for(i=1; (i<num_proc && i<=num_line) ; i++){
-		send_msg(i, num_msg, cripto[num_msg]);
-		num_msg++;	
+	count = 1;
+
+	/* Primeira leva de mensagens */
+	while((count < num_proc) && ((str = getline(&line, &tam, f)) != -1)){
+		send_msg(count, num_msg, line);
+		num_msg++;
+		count++;
 	}
 	
-	/* Recepção das mensagens dos trabalhadores e, se tiver, envio de mais mensagens */
-	while((num_msg < num_line) || (--i > 0)){
+	/* Recebe as mensagens e se ainda tiverem mensagens distribui mais trabalho */
+	while((str = getline(&line, &tam, f)) != -1 || (--count > 0) ){
 
 		MPI_Recv(msgrec, MAX_PASS_SIZE, MPI_CHAR, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 		printf(GREEN "(Mestre) - Recebi de %d a mensagem (%d): %s" RESET, status.MPI_SOURCE,  status.MPI_TAG, msgrec);
-		
 		cracked[status.MPI_TAG] =  malloc(strlen(msgrec)*sizeof(char));
 		strcpy(cracked[status.MPI_TAG], msgrec);
 
-		/* Se ainda tem mensagens para enviar */
-		if(num_msg < num_line){
-			send_msg(status.MPI_SOURCE, num_msg, cripto[num_msg]);
+		if(str != -1){
+			send_msg(status.MPI_SOURCE, num_msg, line);
 			num_msg++;
 		}
+
 	}
+
+	fclose(f);
+
+	printf("Senhas quebradas:\n");
+	for(count=0; count<num_msg; count++){
+		printf("%s", cracked[count]);
+		free(cracked[count]);
+	}
+	free(cracked);
 
 	/* Termina a execução dos processos */
-	end = 0;
-	for(i=1; i<num_proc; i++)
-		MPI_Send(&end, 1, MPI_INT, i, i, MPI_COMM_WORLD);
-
-	/* Libera os vetores e imprime as senhas quebradas */
-	printf("Senhas quebradas:\n");
-	for(i=0; i<num_line; i++){
-		printf("%s", cracked[i]);
-		free(cripto[i]);
-		free(cracked[i]);
-	}
-
-	free(cripto);
-	free(cracked);
+	int end = 0;
+	for(count=1; count<num_proc; count++)
+		MPI_Send(&end, 1, MPI_INT, count, count, MPI_COMM_WORLD);
 }
 
 void worker(int rank)
@@ -155,12 +132,10 @@ void worker(int rank)
 				break;	
 			} 
 		}
-		
+
 		pclose(f);
 		free(msgrec);
 	}
-
-
 }
 
 int main(int argc, char **argv)
@@ -173,23 +148,19 @@ int main(int argc, char **argv)
 	MPI_Comm_size(MPI_COMM_WORLD, &num_proc);
 
 	if(argc != 2){
-
-		if(rank == 0)
+		if(rank == 0)	
 			printf("Entrada: mpiexec -np <ntasks> %s <nome arquivo>\n", argv[0]);
 		MPI_Finalize();
 		return(-1);
 	}
 
 	if(num_proc < 2){
-
-		if(rank == 0)
+		if(rank == 0)	
 			printf("Modelo mestre-trabalhador, -np pelo menos = 2.\n");
 		MPI_Finalize();
 		return(-1);
 	}
 
-
-	
 	if(rank == 0){
 		t_init = wtime();
 		master(argv[1]);
