@@ -1,7 +1,7 @@
-#IntelXeonPhi
+## IntelXeonPhi
 
-Foi estudado o IntelXeonPhi e testado com programas básicos e com um benchmark por acesso remoto.
-Não havia coletado informações de desempenho (parte complicada devido ao timeout de acesso ao Colfax).
+Foi estudado o IntelXeonPhi e testado com programas básicos e com um benchmark por acesso remoto.\
+Não havia coletado informações de desempenho da execução (parte complicada devido ao timeout de acesso ao Colfax).
 
 ----
 
