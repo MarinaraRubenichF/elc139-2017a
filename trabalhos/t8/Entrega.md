@@ -17,7 +17,11 @@ Nome: Ana Luisa V. Solórzano
 ----
 
 ### Estratégias utilizadas:
+ Utilizando o modelo mestre-trabalhador foi implementado um programa em MPI que recebe o arquivo de hashes como entrada, passa esse arquivo para o processo mestre que o lê linha a linha e distribui as hashes para os processos. Primeiro o mestre distribui, se tiver, um hash para cada processo. Após começa a parte dinâmica em que o mestre vai recebendo as mensagens das senhas crackeadas e, se ainda tiverem hashes, envia para aquele processo que terminou sua tarefa e está livre. Já os processos trabalhadores ficam esperando mensagens do mestre dizendo se eles ainda tem senhas a descriptografar ou se eles já podem terminar sua execução.
+ 
+Com isso foram utilizadas trocas de mensagens send e receive para o mestre e também mensagens receive e send para os trabalhadores. Por trabalhar com um vetor de arrays (vetor de hashes) optei por passar duas mensagens para cada hash, uma com o tamanho do array e outra com ele em si, do que definir um valor estático.
 
+Para que os trabalhadores "soubessem" qual processo eram utilizei MPI_Comm_rank(MPI_COMM_WORLD, &rank), passando para a função *worker()* o *rank* do processo, e utilizei a estrutura *status* definida por *MPI_Status* para controlar a recepção das mensagens pelo mestre, para que com isso ele pudesse saber qual a tag da mensagem e quem enviou esse retorno, que estaria livre para mais trabalho.
 
 ### Análises de desempenho: 
  **Arquivos de entrada:** 
@@ -37,8 +41,8 @@ Foram feitas 3 execuções para a versão sequencial em cada caso e pega a médi
 
    * [MDCrack sequencial:](mdcrack_sequencial.c)
    
-   Tempo de Execução - crackme.txt: 1474,869sec\
-   Tempo de Execução - exemplos.txt: 40,350sec
+   Tempo de Execução - crackme.txt: 1474.869sec\
+   Tempo de Execução - exemplos.txt: 40.350sec
    
    * [MDCrack com MPI versão 1:](mdcrack_mpi.c)
    
