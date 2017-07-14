@@ -1,0 +1,8 @@
+Intel Xeon Phi free trial up 14 days:
+https://colfaxresearch.com/remote-access/
+
+Intel workshop examples:
+https://github.com/ehmcruz/intel-workshop.git
+
+Benchmarks:
+http://lava.cs.virginia.edu/Rodinia/download_links.htm

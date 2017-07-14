@@ -1,0 +1,18 @@
+Execução nativa:
+
+1º) Compilar: $ icc -o <binário> <arquivo.c> -mmic -static
+-mmic: diz ao compilador que o binário será executado nativamente no Xeon Phi
+-static: usado para que o linker inclua as bibliotecas no binário. (sem ele deve-se copiar bibliotecas dinamicamente para o Xeon Phi)
+
+2º) Transferir o binário para o Xeon Phi
+	Acessar o servidor SSH do Xeon Phi com ssh mic0ou via SCP
+3º) Rodar conectado ao Xeon Phi normalmente
+
+Pragmas:
+#pragma offload target(mic) in(ponteiro:length(n))
+ - pragma offload: determina que o próximo bloco será executado no coprocessador, e não hospedeiro.
+ - target(mic): especifica qual coprocessador vai executar.
+ - in(ponteiro:length(n)): especifica que os n elementos a partir do ponteiro deverão ser transferidos do hospedeiro para o coprocessador antes do início da execução do bloco. O ambiente automaticamente considera o tipo dos dados para calcular o tamanho em bytes.
+ - out(ponteiro:length(n)): especifica que os n elementos a partir do ponteiro deverão ser transferido do coprocessador para o processador hospedeiro após o término da execução do bloco. O ambiente automaticamente considera o tipo dos dados para calcular o tamanho em bytes.
+ - inout(ponteiro:length(n)): tem o mesmo resultado de fazer in e out com os mesmos
+parâmetros.

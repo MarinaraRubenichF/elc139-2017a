@@ -1,0 +1,34 @@
+1) Para usar OpenMP se tenta incluir a biblioteca omp.h caso o computador ofereça suporte
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
+2) Principais funções:
+int omp_get_num_threads() - retorna número de threads ativas
+int omp_get_thread_num() - retorna id da thread
+
+3) Iniciar bloco de execução paralela:
+#pragma omp parallel{
+}
+
+#pragma omp parallel shared(variáveis - default) private(variáveis replicadas na memória - uma por thread){
+}
+
+4) Rodar programa: 
+$ gcc -o executavel programa.c -fopenmp
+$ export OMP_NUM_THREADS=X
+
+5) Outros pragmas:
+
+#pragma omp master{} - só a thread 0 executa o que está dentro
+#pragma omp single{} - uma das threads executa o que está dentro, as outras esperam essa thread terminar, se não quiser por essa barreira se usa single nowait
+#pragma omp barrier
+#pragma omp critical {} - cria uma região crítica, executada atômicamente podendo se estabelecer um identificado de região crítica com omp critial(id)
+#pragma omp atomic - menos custosa que o critical, posta antes de uma operação
+#pragma omp for - paraleliza laços independentes
+
+PARALELISMO VETORIAL - SIMD
+#pragma simd
+#pragma vector aligned - alinha os endereços de memória acessados para evitar false sharing: cores separados tentam mudar diferentes dados que usam a mesma linha de cache, gastando tempo movendo a linha para frente e para trás
+
+
